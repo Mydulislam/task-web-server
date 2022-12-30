@@ -1,0 +1,6 @@
+.hero {
+    min-height: 100vh;
+    background: #000 url(https://image.freepik.com/free-vector/gradient-geometric-shape-background_78532-307.jpg) center center no-repeat;
+    background-size: cover;
+    position: relative;
+  }
