@@ -6,11 +6,9 @@ import { AuthContext } from '../../../context/AuthProvider';
 
 const AddTask = () => {
     const { user } = useContext(AuthContext);
-    const { register, reset, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate()
     const imgHostKey = process.env.REACT_APP_imgbb_key;
-    console.log(imgHostKey);
-
     const handleAddTask = (data) => {
         const image = data.photo[0];
         console.log(image);
@@ -31,7 +29,7 @@ const AddTask = () => {
                         email: user.email
                     }
                     // Tasks insert kora
-                    fetch('http://localhost:5000/addtasks', {
+                    fetch('https://task-managment-server-one.vercel.app/addtasks', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -52,7 +50,7 @@ const AddTask = () => {
 
     // const saveTaskDatabase = (title, details, email)=>{
     //     const tasksInfo = {title, details, email}
-    //     fetch('http://localhost:5000/addtasks',{
+    //     fetch('https://task-managment-server-one.vercel.app/addtasks',{
     //         method: 'POST',
     //         headers:{
     //             'content-type':'application/json'

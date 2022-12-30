@@ -37,7 +37,7 @@ const Login = () => {
 
     const saveUserDatabase = (name, email) => {
         const userInfo = { name, email};
-        fetch('http://localhost:5000/users', {
+        fetch('https://task-managment-server-one.vercel.app/users', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
